@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>project</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+<header class="header">
+    <a href="#">
+        <i class="fas fa-heartbeat"></i>
+        <span class="logo">Make a Visit to our doctors</span>
+    </a>
+    <button id="myBtn" class="knopka01">Создать</button>
+</header>
+<section class="main">
+    <h2>No items have been added</h2>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Select a Doctor from the list.</p>
+
+            <select id="mySelect" onchange="doctorFunction()">
+                <option value="cardiologist">Cardiologist</option>
+                <option value="dentist">Dentist</option>
+                <option value="terapist">Terapist</option>
+            </select>
+
+            <div id="cardio"class="hide-form">
+            <form action="" method="post" name="cardioForm" id="form">
+            <input type="text" size="20" name="name" placeholder="Name Surname:"><br>
+            <input type="text" size="20" name="target" placeholder="Visit target:"><br>
+            <input type="text" size="20" name="pressure" placeholder="Blood pressure:"><br>
+            <input type="text" size="20" name="mass" placeholder="Body mass index:"><br>
+            <input type="text" size="20" name="diseases" placeholder="Previous diseases:"><br>
+            <input type="text" size="20" name="age" placeholder="Age:"><br>
+            <textarea name="comment" placeholder="Place for  your comments"></textarea><br>
+            <input type="button" class="modalBtn" id="myCard" value="Create a Card" onClick=" cardioCreateCard(document.getElementById('form'))">
+            </form>
+            </div>
+            <div id="terapist" class="hide-form">
+                <form action="" method="post" name="terapistForm" id="terapistForm">
+                <input type="text" size="20" name="name" placeholder="Name Surname:"><br>
+                <input type="text" size="20" name="target" placeholder="Visit target:"><br>
+                <input type="text" size="20" name="age" placeholder="Age:"><br>
+                <textarea name="comment" placeholder="Place for  your comments"></textarea><br>
+                <input type="button" class="modalBtn" value="Create a Card" onClick=" terapistCreateCard(document.getElementById('terapistForm'))">
+            </form>
+            </div>
+            <div id="dentist"class="hide-form">
+                <form action="" method="post" name="dentistForm" id="dentistForm">
+                    <input type="text" size="20" name="name" placeholder="Name Surname:"><br>
+                    <input type="text" size="20" name="target" placeholder="Visit target:"><br>
+                    <input type="text" size="20" name="lastVisit" placeholder="Date of last visit:"><br>
+                    <textarea name="comment" placeholder="Place for  your comments"></textarea><br>
+                    <input type="button" class="modalBtn" id="" value="Create a Card" onClick=" dentistCreateCard(document.getElementById('dentistForm'))">
+                </form>
+            </div>
+            <span class="close">&times</span>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
